@@ -1,0 +1,36 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f3f9ff;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10%;
+    font-size: 20px;
+    border: 1px solid black;
+
+}
+/* main starts */
+main{
+    border: 1px solid black;
+
+}
+.hlo{
+    text-align: center;
+    margin: 3%;
+    font-size: 400%;
+    font-family: 'Kanit', sans-serif;
+    border: 1px solid black;
+
+}
+.point{
+    text-align: center;
+    font-size: 200%;
+    margin-top: -2%;
+    border: 1px solid black;
+}

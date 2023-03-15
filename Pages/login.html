@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Assets/Css/login.css">
+</head>
+
+<body>
+    <div class="login">
+        <div class="head">
+            <a href="#"><i class="fa-solid fa-arrow-left"></i></a>
+            <h5>New member?<a href="#">Sign Up</a></h5>
+        </div>
+        <div class="h2"><h2>Sign In</h2></div>
+
+        <form action=""  id="form">
+    
+            <label for="email">Email :</label>
+            <input type="email" name="email" id="email" placeholder="Email" required><br>
+
+             <!-- <label for="email">Email :</label>
+            <input type="email" name="email" id="email" placeholder="Email" required><br> -->
+
+            <label for="password">Password :</label>
+            <input type="password" name="password" id="password" placeholder="Password" required><br>
+
+            <button type="button" onclick="login()">Sign in</button>
+
+        </form>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    </script>
+    <script>
+        function login() {
+                let email = document.getElementById("email").value
+                let password = document.getElementById("password").value
+                let arr = JSON.parse(localStorage.getItem("array"))
+    
+                let profile_details ={
+                    "email":email,
+                    "password" : password,
+                }
+                let res;
+                arr.find(e => {
+                    if (e["email"] == email && e["password"]==password) {
+                        localStorage.setItem("profile_details",JSON.stringify(profile_details))
+                        return res=1  ;
+                    }
+                    else {
+                        return res=0;
+                    }
+                });
+                if(res==1){
+        // alert("Logged in")
+               window.location.href="../../profile.html"
+    
+    }
+    else{
+        alert("none")
+    }
+    }
+    </script>
+   
+
+</body>
+
+</html>
